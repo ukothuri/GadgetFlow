@@ -1,10 +1,58 @@
+# === Android Build ===
 /build
 .gradle
 /local.properties
-/.idea/caches
-/.idea/libraries
+/.gradle/
+/.cxx/
+
+# === IDE Specific ===
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Ignore individual files inside .idea
+/.idea/*
+
+# But keep essential versioned files (optional)
+/!.idea/codeStyles
+/!.idea/runConfigurations
+
+# === OS Specific ===
+.DS_Store
+Thumbs.db
+
+# === Android Studio Specific ===
+/captures/
+/.externalNativeBuild/
+/gen/
+/out/
+/navigation.json
+*.apk
+*.ap_
+
+# === Test/Debug ===
+*.log
+*.hprof
+*.test_result
+
+# === Version Control & Build Cache ===
+/.gradle/
+/.idea/caches/
+/.idea/libraries/
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-.idea
+/.idea/deploymentTargetSelector.xml
+/.idea/deviceStreaming.xml
+/.idea/gradle.xml
+/.idea/compiler.xml
+/.idea/misc.xml
+/.idea/runConfigurations/
+
+# === Ignore generated files from new Gradle versions ===
+/.gradle/**/fileHashes
+/.gradle/**/executionHistory
+/.gradle/**/checksums
+/.gradle/**/vcs-1
