@@ -1,11 +1,14 @@
+// presentation/productlist/ProductViewModelFactory.kt
 package com.example.gadgetflow.presentation.productlist
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.gadgetflow.data.repository.ProductRepository
+import com.example.gadgetflow.data.repository.ProductRepositoryInterface
 
-// presentation/productlist/ProductViewModelFactory.kt
-class ProductViewModelFactory(private val repository: ProductRepository) : ViewModelProvider.Factory {
+class ProductViewModelFactory(
+    private val repository: ProductRepositoryInterface
+) : ViewModelProvider.Factory {
+
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return ProductViewModel(repository) as T
     }

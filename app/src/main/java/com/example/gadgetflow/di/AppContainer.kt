@@ -1,8 +1,9 @@
-// com.example.gadgetflow.di.AppContainer.kt
+// di/AppContainer.kt
 package com.example.gadgetflow.di
 
 import com.example.gadgetflow.data.api.ProductApiService
-import com.example.gadgetflow.data.repository.ProductRepository
+import com.example.gadgetflow.data.repository.ProductRepositoryInterface
+import com.example.gadgetflow.data.repository.RealProductRepository
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -20,12 +21,11 @@ object AppContainer {
     }
 
     // API service (singleton)
-    val productApiService: ProductApiService by lazy {
+    private val productApiService: ProductApiService by lazy {
         retrofit.create(ProductApiService::class.java)
     }
 
-    // Repository (singleton)
-    val productRepository: ProductRepository by lazy {
-        ProductRepository(productApiService)
+    val productRepository: ProductRepositoryInterface by lazy {
+        RealProductRepository(productApiService)
     }
 }
